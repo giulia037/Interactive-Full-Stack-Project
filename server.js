@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const routes = require('./controllers');
@@ -21,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-app.use(require('./controllers/homepage'));
+app.use(require('./controllers'));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
@@ -29,6 +30,7 @@ sequelize.sync({ force: false }).then(() => {
 
 
 const sess = {
+  secret: "Super secret secret",
   cookie: {
     maxAge: 60 * 60 * 1000,
     httpOnly: true,
