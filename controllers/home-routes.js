@@ -1,24 +1,32 @@
 const router = require('express').Router();
-const { User, Beginner } = require('../models');
+const { User, intermediate, collection, beginner, advanced } = require('../models');
 const withAuth = require('../utils/auth');
 // GET all stages for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbUserData = await User.findAll({
+    const collectionData = await collection.findAll({
       include: [
         {
-          model: Beginner,
+          model: beginner,
           attributes: ['filename', 'description'],
+
+          model: intermediate,
+          attributes: ['filename', 'description'],
+
+          model: advanced,
+          attributes: ['filename', 'description'],
+
+
         },
       ],
     });
 
-    const beginner = dbBeginnerData.map((beginner) =>
-      beginner.get({ plain: true })
+    const collection = dbcollectionData.map((collection) =>
+      collection.get({ plain: true })
     );
 
     res.render('homepage', {
-      beginner,
+      collectionData: collectionData,
     });
   } catch (err) {
     console.log(err);
@@ -26,13 +34,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
+// GET beginner category 
 router.get('/beginner/:id', async (req, res) => {
   try {
-    const dbBeginnerData = await Beginner.findByPk(req.params.id, {
+    const dbBeginnerData = await beginner.findByPk(req.params.id, {
       include: [
         {
-          model: Beginner,
+          model: beginner,
           attributes: [
             'id',
             'title',
@@ -50,19 +58,87 @@ router.get('/beginner/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/intermediate/:id', async (req, res) => {
+  try {
+    const dbintermediateData = await intermediate.findByPk(req.params.id, {
+      include: [
+        {
+          model: intermediate,
+          attributes: [
+            'id',
+            'title',
+            'author',
+            'cost',
+          ],
+        },
+      ],
+    });
 
-// // GET one painting
-// router.get('/painting/:id', async (req, res) => {
-//   try {
-//     const dbPaintingData = await Painting.findByPk(req.params.id);
+    const intermediate = dbintermediateData.get({ plain: true });
+    res.render('intermediate', { intermediate  });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get('/advanced/:id', async (req, res) => {
+  try {
+    const dbadvancedData = await advanced.findByPk(req.params.id, {
+      include: [
+        {
+          model: advanced,
+          attributes: [
+            'id',
+            'title',
+            'author',
+            'cost',
+          ],
+        },
+      ],
+    });
 
-//     const painting = dbPaintingData.get({ plain: true });
+    const advanced = dbadvancedData.get({ plain: true });
+    res.render('advanced', { advanced });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-//     res.render('painting', { painting });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+// Get one Beginner book 
+router.get('/book/:id', async (req, res) => {
+  try {
+    const dbbeginnerData = await Book.findByPk(req.params.id);
 
+    const beginnerBook = dbbeginnerData.get({ plain: true });
+    res.render('book', {beginnerBook, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+// Get one intermediate Book
+router.get('/book/:id', async (req, res) => {
+  try {
+    const dbintermediateData = await Book.findByPk(req.params.id);
+
+    const intermediateBook = dbintermediateData.get({ plain: true });
+    res.render('book', {intermediateBook, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+// Get one advanced Book
+router.get('/book/:id', async (req, res) => {
+  try {
+    const dbadvancedData = await Book.findByPk(req.params.id);
+
+    const advancedBook = dbadvancedData.get({ plain: true });
+    res.render('book', {advancedBook, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
