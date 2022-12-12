@@ -2,6 +2,7 @@ const Collection = require('./Collection');
 const Advanced = require('./Advanced');
 const Intermediate = require('./Intermediate');
 const Beginner = require('./Beginner');
+const Book = require('./Book')
 
 Advanced.hasMany(Book, {
     foreignKey: 'aBook_id',
@@ -12,4 +13,4 @@ Beginner.hasMany(Book, {
 Intermediate.hasMany(Book, {
     foreignKey: 'iBook_id',
 });
-module.exports = { Intermediate, Beginner, Advanced};
+module.exports = { Intermediate, Beginner, Advanced, Book};
