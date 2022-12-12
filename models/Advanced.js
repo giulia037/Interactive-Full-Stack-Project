@@ -11,10 +11,24 @@ Advanced.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title:{
+      type:DataTypes.STRING,
+      allowNull:false,
+
+    },
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    price:{
+      type: DataTypes.STRING,
+      allowNull:false,
+    },
+    audiobook:{
+      type: DataTypes.STRING,
+      allowNull: false,
+
+    }
   },
   {
     sequelize,
@@ -22,6 +36,7 @@ Advanced.init(
     underscored: true,
     modelName: 'advanced',
   }
+
 );
 
 module.exports = Advanced;
