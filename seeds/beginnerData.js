@@ -1,6 +1,6 @@
 const { Beginner } = require('../models');
 
-const beginnerdata = [
+const beginnerData = [
   {
     title: 'Learn Spanish With Short Stories for Adult Beginners',
     author: 'Explore ToWin',
@@ -43,6 +43,6 @@ const beginnerdata = [
   },
 ];
 
-const seedBeginner = () => Beginner.bulkCreate(beginnerdata);
+const seedBeginner = () => Beginner.bulkCreate(beginnerData);
 
 module.exports = seedBeginner;
