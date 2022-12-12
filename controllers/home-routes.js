@@ -1,41 +1,43 @@
 const router = require('express').Router();
 const { User, Intermediate, Collection, Beginner, Advanced } = require('../models');
-const Advanced = require('../models/Advanced');
-const Beginner = require('../models/Beginner');
-const Intermediate = require('../models/Intermediate');
+// const Advanced = require('../models/Advanced');
+// const Beginner = require('../models/Beginner');
+// const Intermediate = require('../models/Intermediate');
 const withAuth = require('../utils/auth');
 // GET all stages for homepage
-router.get('/', async (req, res) => {
-  try {
-    const dbCollectionData = await Collection.findAll({
-      include: [
-        {
-          model: Beginner,
-          attributes: ['filename', 'description'],
+router.get('/', async (req, res) => 
+{
+  res.render('homepage')
+  // try {
+  //   const dbCollectionData = await Collection.findAll({
+  //     include: [
+  //       {
+  //         model: Beginner,
+  //         attributes: ['filename', 'description'],
 
-          model: Intermediate,
-          attributes: ['filename', 'description'],
+  //         model: Intermediate,
+  //         attributes: ['filename', 'description'],
 
-          model: Advanced,
-          attributes: ['filename', 'description'],
+  //         model: Advanced,
+  //         attributes: ['filename', 'description'],
 
 
-        },
-      ],
-    });
+  //       },
+  //     ],
+  //   });
 
-    const Collection = dbCollectionData.map((collection) =>
-      collection.get({ plain: true })
-    );
+  //   const Collection = dbCollectionData.map((collection) =>
+  //     collection.get({ plain: true })
+  //   );
 
-    res.render('main', {
-      collectionData: collectionData,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  //   res.render('main', {
+  //     collectionData: collectionData,
+  //     loggedIn: req.session.loggedIn,
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 // GET Beginner category 
