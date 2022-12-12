@@ -27,10 +27,10 @@ Intermediate.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    iBook_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    // iBook_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
 
   },
   {
