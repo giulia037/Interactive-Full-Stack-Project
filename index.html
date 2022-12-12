@@ -1,119 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style/style.css">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#about">Language</a>
-        <a href="#contact">Level</a>
-        <!-- Turn into a dropdown later -->
-        <input type="text" placeholder="Search..">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Language learners </title>
-        <button type="button" class="btn btn-beginner">Beginner</button>
-        <button type="button" class="btn btn-intermediate">Intermediate</button>
-        <button type="button" class="btn btn-expert">Expert</button> 
-      </div>
-
-
-    <!-- <a class="btn btn-beginner" href="#" role="button">Link</a>
-    <a class="btn btn-intermediate" href="#" role="button">Link</a>
-    <a class="btn btn-expert" href="#" role="button">Link</a> -->
-<header>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Extending Bootstrap</title>
+  </head>
+  <header>
 
     <img src="./images/img.jpeg" alt="world-flags" /> 
 
 </header>
-    <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
-        <div class="container">
-            <a class="navbar-brand" href="#">Book search </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-</head>
 
+  <body>
+    <!-- Create and apply a custom class name "custom-navbar" -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">The Guestbook</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav ms-auto">
+            <!-- Update all <a> elements in the navbar and their :hover styles -->
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
+    <!-- Create and apply a custom class name "hero" -->
+    <section class="py-5 hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 text-end">
+            <h1>Welcome to the guestbook!</h1>
+            <p class="lead">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Assumenda optio expedita consequuntur odio nostrum alias id eius
+              distinctio, quaerat ullam mollitia error aliquam sunt delectus
+              molestias autem rerum dignissimos quidem.
+            </p>
+          </div>
+          <div class="col-12 col-md-6">
+            <form id="guestbook-form">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  id="name-input"
+                  placeholder="Enter your name..."
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  name="comment"
+                  id="comment-input"
+                  class="form-control"
+                  placeholder="Leave a comment..."
+                ></textarea>
+              </div>
+              <!-- Remove the `btn-primary` class and add `custom-btn` -->
+              <button class="btn custom-btn">Leave your mark.</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<body>
-    <section id="services">
-        <div class="container">
-            <h1 class="text-center">options</h1>
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card servicesText">
-                        <div class="card-body">
-                            <i class="fas servicesIcon fa-clock"></i>
-                            <a href="https://www.google.com" class="btn btn-success">Link</a>
-                            <h4 class="card-title mt-3">Website Development</h4>
-                            <p class="card-text mt-3">Website Development is a core instrumental knowledge to knowing the ins and outs of a website and with my vast knowledge I have no doubts that the devolpment aspect can be completed in a reasonable time frame . 
-                            </p>
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="card servicesText">
-                        <div class="card-body">
-                            <i class='fas servicesIcon fa-layer-group'></i>
-                            <a href="https://www.google.com" class="btn btn-success">Link</a>
-                            <h4 class="card-title mt-3">Website Design</h4>
-                            <p class="card-text mt-3">whatever we want it to be 
-                            </p>
-                        </div>
-                    </div>  
-                </div>
+    <main class="container my-3">
+      <div class="row" id="guest-book-display"></div>
+    </main>
+  </body>
 
-                <div class="col-lg-4 mt-4">
-                    <div class="card servicesText">
-                        <div class="card-body">
-                            <i class='far servicesIcon fa-check-circle'></i>
-                            <a href="https://www.google.com" class="btn btn-success">Link</a>
-                            <h4 class="card-title mt-3">Website Deployment</h4>
-                            <p class="card-text mt-3"> Where app launched
-                            </p>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card servicesText">
-                        <div class="card-body">
-                            <i class='fas servicesIcon fa-search'></i>
-                            <a href="https://www.google.com/" class="btn btn-success">Link</a>
-                            <h4 class="card-title mt-3">SEO</h4>
-                            <p class="card-text mt-3">I am able to include certain words and phrases to the website which is searched before hand to the topic of your company to ensure your website is rated near top of google for peak search engine optimization .
-                            </p>
-                        </div>
-                    </div>  
-                </div>
-
-
-
-
-
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>              
-</body>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./assets/js/script.js"></script>
 </html>
