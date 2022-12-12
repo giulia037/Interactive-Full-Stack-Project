@@ -11,10 +11,27 @@ Intermediate.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.INTEGER ,
+      allowNull: false,
+    },
+    audiobook: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    iBook_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
   },
   {
     sequelize,
