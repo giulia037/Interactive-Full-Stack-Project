@@ -1,6 +1,6 @@
 const { Advanced } = require('../models');
 
-const advanceddata = [
+const advancedData = [
   {
     title: 'Book',
     author: 'Author',
@@ -43,6 +43,6 @@ const advanceddata = [
   },
 ];
 
-const seedAdvanced = () => Advanced.bulkCreate(advanceddata);
+const seedAdvanced = () => Advanced.bulkCreate(advancedData);
 
 module.exports = seedAdvanced;

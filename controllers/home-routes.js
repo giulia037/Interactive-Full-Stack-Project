@@ -1,13 +1,16 @@
 const router = require('express').Router();
-const { Intermediate, Collection, Beginner, Advanced } = require('../models');
+const { User, Intermediate, Collection, Beginner, Advanced } = require('../models');
+const Advanced = require('../models/Advanced');
+const Beginner = require('../models/Beginner');
+const Intermediate = require('../models/Intermediate');
 const withAuth = require('../utils/auth');
 // GET all stages for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbcollectionData = await Collection.findAll({
+    const dbCollectionData = await Collection.findAll({
       include: [
         {
-          model:Beginner,
+          model: Beginner,
           attributes: ['filename', 'description'],
 
           model: Intermediate,
@@ -21,12 +24,12 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const Collection = dbcollectionData.map((Collection) =>
-      Collection.get({ plain: true })
+    const Collection = dbCollectionData.map((collection) =>
+      collection.get({ plain: true })
     );
 
     res.render('main', {
-      collectionData: dbcollectionData,
+      collectionData: collectionData,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -36,12 +39,12 @@ router.get('/', async (req, res) => {
 });
 
 // GET Beginner category 
-router.get('/beginner/:id', async (req, res) => {
+router.get('/Beginner/:id', async (req, res) => {
   try {
-    const dbbeginnerData = await Beginner.findByPk(req.params.id, {
+    const dbBeginnerData = await Beginner.findByPk(req.params.id, {
       include: [
         {
-          model:Beginner,
+          model: Beginner,
           attributes: [
             'id',
             'title',
@@ -52,16 +55,16 @@ router.get('/beginner/:id', async (req, res) => {
       ],
     });
 
-    const Beginner = dbbeginnerData.get({ plain: true });
-    res.render('beginner', {Beginner });
+    const Beginner = dbBeginnerData.get({ plain: true });
+    res.render('Beginner', { Beginner });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-router.get('/intermediate/:id', async (req, res) => {
+router.get('/Intermediate/:id', async (req, res) => {
   try {
-    const dbintermediateData = await Intermediate.findByPk(req.params.id, {
+    const dbIntermediateData = await Intermediate.findByPk(req.params.id, {
       include: [
         {
           model: Intermediate,
@@ -75,19 +78,19 @@ router.get('/intermediate/:id', async (req, res) => {
       ],
     });
 
-    const Intermediate = dbintermediateData.get({ plain: true });
-    res.render('intermediate', { Intermediate  });
+    const Intermediate = dbIntermediateData.get({ plain: true });
+    res.render('Intermediate', { Intermediate  });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-router.get('/advanced/:id', async (req, res) => {
+router.get('/Advanced/:id', async (req, res) => {
   try {
-    const dbadvancedData = await advanced.findByPk(req.params.id, {
+    const dbAdvancedData = await Advanced.findByPk(req.params.id, {
       include: [
         {
-          model: advanced,
+          model: Advanced,
           attributes: [
             'id',
             'title',
@@ -98,8 +101,8 @@ router.get('/advanced/:id', async (req, res) => {
       ],
     });
 
-    const advanced = dbadvancedData.get({ plain: true });
-    res.render('advanced', { advanced });
+    const Advanced = dbAdvancedData.get({ plain: true });
+    res.render('Advanced', { Advanced });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -109,34 +112,34 @@ router.get('/advanced/:id', async (req, res) => {
 // Get one Beginner book 
 router.get('/book/:id', async (req, res) => {
   try {
-    const dbbeginnerData = await Book.findByPk(req.params.id);
+    const dbBeginnerData = await Book.findByPk(req.params.id);
 
-    constBeginnerBook = dbbeginnerData.get({ plain: true });
-    res.render('book', {beginnerBook, loggedIn: req.session.loggedIn });
+    const BeginnerBook = dbBeginnerData.get({ plain: true });
+    res.render('book', {BeginnerBook, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-// Get one intermediate Book
+// Get one Intermediate Book
 router.get('/book/:id', async (req, res) => {
   try {
-    const dbintermediateData = await Book.findByPk(req.params.id);
+    const dbIntermediateData = await Book.findByPk(req.params.id);
 
-    const intermediateBook = dbintermediateData.get({ plain: true });
-    res.render('book', {intermediateBook, loggedIn: req.session.loggedIn });
+    const IntermediateBook = dbIntermediateData.get({ plain: true });
+    res.render('book', {IntermediateBook, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-// Get one advanced Book
+// Get one Advanced Book
 router.get('/book/:id', async (req, res) => {
   try {
-    const dbadvancedData = await Book.findByPk(req.params.id);
+    const dbAdvancedData = await Book.findByPk(req.params.id);
 
-    const advancedBook = dbadvancedData.get({ plain: true });
-    res.render('book', {advancedBook, loggedIn: req.session.loggedIn });
+    const AdvancedBook = dbAdvancedData.get({ plain: true });
+    res.render('book', {AdvancedBook, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

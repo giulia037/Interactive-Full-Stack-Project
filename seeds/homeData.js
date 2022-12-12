@@ -1,6 +1,6 @@
 const { Home } = require('../models');
 
-const homedata = [
+const homeData = [
   {
     name: 'Beginner',
     description: 'Click here to start your elarning adventure!'
@@ -16,7 +16,7 @@ const homedata = [
   
 ];
 
-const seedHome = () => Home.bulkCreate(homedata);
+const seedHome = () => Home.bulkCreate(homeData);
 
 module.exports = seedHome;
 
