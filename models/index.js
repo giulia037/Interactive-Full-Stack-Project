@@ -1,3 +1,9 @@
+const User = require('./User');
+const Collection = require('./Collection');
+const Beginner = require('./Beginner');
+const Intermediate = require('./Intermediate');
+const Advanced = require('./Advanced');
+
 
 Advanced.hasMany(Book, {
     foreignKey: 'aBook_id',
