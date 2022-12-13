@@ -1,4 +1,4 @@
-const { Collection } = require('../models');
+const Collection = require('../models/Collection');
 
 const collectionData= [
     {
@@ -12,8 +12,8 @@ const collectionData= [
 
     {
      name:'Advanced'
-    }
-]
+    },
+];
 
 const seedCollection = () => Collection.bulkCreate(collectionData);
 module.exports = seedCollection;

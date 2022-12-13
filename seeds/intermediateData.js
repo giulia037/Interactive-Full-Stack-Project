@@ -1,4 +1,4 @@
-const { Intermediate } = require("../models");
+const Intermediate = require("../models/Intermediate");
 
 const intermediateData = [
   {

@@ -1,4 +1,4 @@
-const { Advanced } = require("../models");
+const Advanced = require("../models/Advanced");
 
 const advancedData = [
   {
