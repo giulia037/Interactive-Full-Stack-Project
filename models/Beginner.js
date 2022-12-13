@@ -27,12 +27,16 @@ Beginner.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    bBook_id:{
+      type: DataTypes.INTEGER,
+      allowNull:false,
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'beginner',
+    modelName: 'Beginner',
   }
 );
 
