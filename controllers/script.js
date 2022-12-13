@@ -4,6 +4,12 @@ var commentInputEl = $('#comment-input');
 var options = [];
 var guestBookDisplayEl = $('#guest-book-display');
 
+function openWindow(){
+  // create Window 
+  var options = [];
+  var namelink = window.prompt(" Which level are you ? ");
+  console.log(namelink);
+
 var printGuestData = function (name, comment) {
   var cardColumnEl = $('<div>');
   cardColumnEl.addClass('col-12 col-sm-4 col-md-3');
@@ -45,4 +51,4 @@ var handleFormSubmit = function (event) {
   commentInputEl.val('');
 };
 
-formEl.on('submit', handleFormSubmit);
+formEl.on('submit', handleFormSubmit); }
