@@ -3,15 +3,18 @@ const { Collection } = require('../models');
 const collectionData= [
     {
         name: 'Beginner',
+        collection_id: 1,
 
     },
 
     {
-    name: 'Intermediate'
+    name: 'Intermediate',
+    collection_id: 2,
     },
 
     {
-     name:'Advanced'
+     name:'Advanced',
+     collection_id:3,
     }
 ]
 
