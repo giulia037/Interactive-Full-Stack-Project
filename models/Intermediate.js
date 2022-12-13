@@ -31,9 +31,17 @@ Intermediate.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    collection_id:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'collection',
+        key: 'id'
+      }
+    }
 
   },
-  {
+  
+{
     sequelize,
     freezeTableName: true,
     underscored: true,

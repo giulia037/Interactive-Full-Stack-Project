@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 // const seedHome = require('./homeData');
 // const seedBeginner = require('./beginnerData');
 // const seedIntermediate = require('./intermediateData');
-// const seedAdvanced = require('./advancedData');
+const seedAdvanced = require('./advancedData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -13,9 +13,10 @@ const seedAll = async () => {
 
   // await seedIntermediate();
 
-  // await seedAdvanced();
+  await seedAdvanced();
 
   process.exit(0);
 };
 
 seedAll();
+
