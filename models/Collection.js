@@ -20,7 +20,7 @@ Collection.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'collection',
+    modelName: 'Collection',
   }
 );
 

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Collection = require('./Collection');
 
 class Advanced extends Model {}
 
@@ -31,13 +32,18 @@ Advanced.init(
     aBook_id:{
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    collection_id:{
+      type: DataTypes.STRING,
+      allowNull: false,
+
     }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'advanced',
+    modelName: 'Advanced',
   }
 
 );
