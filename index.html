@@ -1,17 +1,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Enter your description here" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+<link rel="stylesheet" href="style/style.css">
+<head>
+
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">Language</a>
+        <a href="#contact">Level</a>
+        <!-- Turn into a dropdown later -->
+        <input type="text" placeholder="Search..">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Language learners </title>
+        <button type="button" class="btn btn-beginner">Beginner</button>
+        <button type="button" class="btn btn-intermediate">Intermediate</button>
+        <button type="button" class="btn btn-expert">Expert</button> 
+      </div>
+
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Extending Bootstrap</title>
@@ -40,6 +47,7 @@
             <a class="nav-item nav-link" href="#">Home</a>
             <a class="nav-item nav-link" href="#">About US</a>
             <a class="nav-item nav-link" href="#">Pricing</a>
+
           </div>
         </div>
       </div>
@@ -52,10 +60,7 @@
           <div class="col-12 col-md-6 text-end">
             <h1>Welcome Language Learners!</h1>
             <p class="lead">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Assumenda optio expedita consequuntur odio nostrum alias id eius
-              distinctio, quaerat ullam mollitia error aliquam sunt delectus
-              molestias autem rerum dignissimos quidem.
+              Hello! Welcome to Language Learners where we indever into help you find a book that will help you on your journy in the world of Language.
             </p>
           </div>
           <div class="col-12 col-md-6">
@@ -84,16 +89,106 @@
       </div>
     </section>
 
-    <main class="container my-3">
-      <div class="row" id="guest-book-display"></div>
-    </main>
-  </body>
+    
+    <!-- book markers -->
+    <div id="large-th">
+        <div class="container">
+          <h1> A list of books</h1>
+          <br>
+          <div class="choose">
+            <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+            <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+          </div>
+          <div id="list-th">
+            <div class="book read">
+              <div class="cover">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/f9/8e/2d/f98e2d661445620266c0855d418aab71.jpg">
+              </div>
+              <div class="description">
+                <p class="title">Frankenstein<br>
+                  <span class="author">Mary Shelley</span>
+                </p>
+              </div>
+            </div>
+            <div class="book read">
+              <div class="cover">
+                <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
+              </div>
+              <div class="description">
+                <p class="title">A Little Princess<br>
+                  <span class="author">Frances Hodgson Burnett</span>
+                </p>
+              </div>
+            </div>
+            <div class="book unread">
+              <div class="cover">
+                <img src="http://www.publishersweekly.com/images/data/ARTICLE_PHOTO/photo/000/028/28129-1.JPG">
+              </div>
+              <div class="description">
+                <p class="title">Roughing It</br>
+                  <span class="author">Mark Twain</span>
+                </p>
+              </div>
+            </div>
+            <div class="book unread">
+              <div class="cover">
+                <img src="http://talkingwriting.com//sites/default/files/Bird-by-Bird-image1.jpg">
+              </div>
+              <div class="description">
+                <p class="title">Bird By Bird</br>
+                  <span class="author">Anne Lamott</span>
+                </p>
+              </div>
+            </div>
+            <div class="book read">
+              <div class="cover">
+                <img src="http://d.gr-assets.com/books/1414348859l/23209971.jpg">
+              </div>
+              <div class="description">
+                <p class="title">Girl at War</br>
+                  <span class="author">Sara Novic</span>
+                </p>
+              </div>
+            </div>
+            <div class="book read">
+              <div class="cover">
+                <img src="http://prodimage.images-bn.com/pimages/9780062315007_p0_v2_s192x300.jpg">
+              </div>
+              <div class="description">
+                <p class="title">The Alchemist</br>
+                  <span class="author">Paulo Coelho</span>
+                </p>
+              </div>
+            </div>
+            <div class="book read">
+              <div class="cover">
+                <img src="http://eastchapelhillobserver.com/wp-content/uploads/2015/02/amazondotcom.jpg">
+              </div>
+              <div class="description">
+                <p class="title">Anne of Green Gables</br>
+                  <span class="author">Lucy Maud Montgomery</span>
+                </p>
+              </div>
+            </div>
+            <div class="book read">
+              <div class="cover">
+                <img src="http://www.penguinbooksindia.com/sites/default/files/book_image/9780143416319.jpg">
+              </div>
+              <div class="description">
+                <p class="title">Animal Farm</br>
+                  <span class="author">George Orwell</span>
+                </p>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
-  ></script>
-  <script src="./assets/js/script.js"></script>
+
+
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
+                 
+</body>
 </html>

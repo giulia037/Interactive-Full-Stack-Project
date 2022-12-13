@@ -27,7 +27,10 @@ Advanced.init(
     audiobook:{
       type: DataTypes.STRING,
       allowNull: false,
-
+    },
+    aBook_id:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
   },
   {
