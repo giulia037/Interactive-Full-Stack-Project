@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const seedCollection = require('./collectionData');
-const seedBeginner = require('./beginnerData');
-const seedIntermediate = require('./intermediateData');
+// const seedHome = require('./homeData');
+// const seedBeginner = require('./beginnerData');
+// const seedIntermediate = require('./intermediateData');
 const seedAdvanced = require('./advancedData');
 
 const seedAll = async () => {
@@ -19,3 +19,4 @@ const seedAll = async () => {
 };
 
 seedAll();
+
