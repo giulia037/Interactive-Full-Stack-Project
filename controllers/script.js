@@ -1,7 +1,7 @@
 var formEl = $('#guestbook-form');
 var nameInputEl = $('#name-input');
 var commentInputEl = $('#comment-input');
-
+var options = [];
 var guestBookDisplayEl = $('#guest-book-display');
 
 var printGuestData = function (name, comment) {
