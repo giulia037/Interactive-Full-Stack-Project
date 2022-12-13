@@ -15,14 +15,14 @@ const Book = require('./Book')
               Intermediate.hasMany(Book, {
                   foreignKey: 'iBook_id',
               });
-              Advanced.belongsTo(Collection,{
-                foreignKey: 'collection_id',
-              });
-              Beginner.belongsTo(Collection,{
-                foreignKey: 'collection_id',
-              });
-              Intermediate.belongsTo(Collection,{
-                foreignKey: 'collection_id',
+              Collection.hasOne(Advanced,{
+                foreignKey:'collection_id'
+              })
+              Collection.hasOne(Beginner,{
+                foreignKey:'collection_id'
+              })
+              Collection.hasOne(Intermediate,{
+                foreignKey:'collection_id'
               })
 
 module.exports = { Intermediate, Beginner, Advanced, Book, User, Collection};

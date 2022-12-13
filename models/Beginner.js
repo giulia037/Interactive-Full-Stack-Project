@@ -27,10 +27,19 @@ Beginner.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    collection_id:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'collection',
+        key: 'id'
+      },
+    },
     bBook_id:{
       type: DataTypes.INTEGER,
       allowNull:false,
     }
+    
+    
   },
   {
     sequelize,
