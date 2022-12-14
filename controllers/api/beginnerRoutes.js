@@ -1,12 +1,15 @@
 const router = require('express').Router();
-const Beginner = require('../../models/beginner');
+const {Beginner} = require('../../models');
 
 router.get('/', async (req, res) => {
-    const beginnerData = await Beginner.findAll().catch((err) => {
-      res.json(err);
+  try {
+    const beginnerData = await Beginner.findAll({
     });
-    res.json(beginnerData);
-  });
+    res.status(200).json(beginnerData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
   
   router.post('/', async (req, res) => {
     try {
