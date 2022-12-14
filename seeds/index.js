@@ -15,6 +15,7 @@ const seedAll = async () => {
   await seedIntermediate();
 
   await seedAdvanced();
+  
   await seedCollection();
 
   process.exit(0);
