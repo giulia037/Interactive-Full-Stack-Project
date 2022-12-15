@@ -8,7 +8,7 @@ const seedCollection = require('./collectionData');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  // await seedHome();
+  await seedCollection();
 
   await seedBeginner();
 

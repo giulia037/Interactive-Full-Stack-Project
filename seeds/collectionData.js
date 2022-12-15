@@ -1,4 +1,4 @@
-const { Collection } = require('../models');
+const Collection = require('../models/Collection');
 
 const collectionData= [
     {
@@ -13,8 +13,7 @@ const collectionData= [
     },
 
     {
-     name:'Advanced',
-     collection_id:3,
+     name:'Advanced'
     }
 ]
 

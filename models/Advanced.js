@@ -34,11 +34,8 @@ Advanced.init(
       allowNull: false,
     },
     collection_id:{
-      type: DataTypes.INTEGER,
-      references:{
-        model: 'collection',
-        key: 'id'
-      }
+      type: DataTypes.STRING,
+      allowNull: false,
 
     }
   },
